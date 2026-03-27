@@ -1,18 +1,15 @@
 export const metadata = {
   title: "Login | ITELECT",
-  description: "Page made by Erika Dirilo",
-
+  description: "Page made by Erika",
   icons: {
-    icon: '/lotus.png',
+    icon: '/astro.png',
   },
 };
 
 export default function LoginLayout({ children }) {
   return (
-    <html lang="en">
-    <body>
-        <>{children}</>
-    </body>
-    </html>
+    <div className="login-container min-h-screen">
+       {children}
+    </div>
   );
 }

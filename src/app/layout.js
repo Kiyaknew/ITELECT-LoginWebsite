@@ -1,14 +1,50 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local"; 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const iosevkaCharon = localFont({
+  src: [
+    {
+      path: "./fonts/IosevkaCharon-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/IosevkaCharon-LightItalic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "./fonts/IosevkaCharon-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/IosevkaCharon-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/IosevkaCharon-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/IosevkaCharon-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "./fonts/IosevkaCharon-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/IosevkaCharon-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-iosevka",
 });
 
 export const metadata = {
@@ -17,13 +53,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+ return (
+  <html lang="en">
+    <body className={iosevkaCharon.variable}> 
+      <main className="font-sans min-h-full flex flex-col">
+        {children}
+      </main>
+    </body>
+  </html>
+);
 }

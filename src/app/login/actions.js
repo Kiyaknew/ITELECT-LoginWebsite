@@ -4,16 +4,16 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function Submit(_, formData) {
-  const email = formData.get("email");
+  const username = formData.get("username");
   const password = formData.get("password");
 
-  if (!email.endsWith("@gmail.com")) {
+  if (!username || username.length < 3) {
     return {
-      errors: "Email mismatch.",
+      errors: "Username must be at least 3 characters long.",
     };
   }
 
-  if (password !== "pass1234") {
+  if (password !== "adriangreen") {
     return {
       errors: "Incorrect password.",
     };
@@ -21,11 +21,10 @@ export default async function Submit(_, formData) {
 
   const cookieData = await cookies();
 
-  cookieData.set("login", email, {
+  cookieData.set("login", username, {
     httpOnly: true,
   });
 
-  // It succeds
-  console.log("Ok");
+  console.log("Login Successful");
   redirect("/home");
 }
