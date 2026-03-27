@@ -1,6 +1,10 @@
 export const metadata = {
   title: "Login | ITELECT",
-  description: "Page made",
+  description: "Page made by Erika Dirilo",
+
+  icons: {
+    icon: '/lotus.png',
+  },
 };
 
 export default function LoginLayout({ children }) {

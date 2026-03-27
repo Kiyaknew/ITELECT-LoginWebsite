@@ -13,7 +13,7 @@ export default async function Submit(_, formData) {
     };
   }
 
-  if (password !== "Testing123!") {
+  if (password !== "pass1234") {
     return {
       errors: "Incorrect password.",
     };
