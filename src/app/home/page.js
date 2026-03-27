@@ -16,6 +16,7 @@ const HomePage = () => {
 
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      {/* Background */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center shadow-inner"
         style={{ 
@@ -24,8 +25,17 @@ const HomePage = () => {
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
       </div>
-      
+
+      {/* Foreground card */}
       <div className="relative z-10 flex flex-col items-center text-center p-12 rounded-3xl backdrop-blur-md bg-black/30 border border-white/10 shadow-2xl max-w-md mx-4">
+        
+      {/* LOGO */}
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Nextjs-logo.svg" 
+          alt="Project Logo" 
+          className="w-20 h-20 mb-6"
+        />
+          
         <h1 className="text-3xl font-black text-white tracking-tighter uppercase mb-2">
           Welcome to
         </h1>
