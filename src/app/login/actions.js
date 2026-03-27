@@ -27,5 +27,5 @@ export default async function Submit(_, formData) {
 
   // It succeds
   console.log("Ok");
-  redirect("/");
+  redirect("/home");
 }
